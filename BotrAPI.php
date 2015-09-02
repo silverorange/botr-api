@@ -1,22 +1,22 @@
 <?php
     /*-----------------------------------------------------------------------------
-     * PHP API kit for the Bits on the Run API
+     * PHP client library for Bits on the Run System API
      *
      * Author:      Sergey Lashin
-     * Copyright:   (c) 2010 LongTail Ad Solutions
-     * Licence:     GNU Lesser General Public License, version 3
-     *              http://www.gnu.org/licenses/lgpl-3.0.txt
+     * Copyright:   (c) 2012 LongTail Ad Solutions
+     * License:     BSD 3-Clause License
+     *              See accompanying LICENSE file
      *
-     * Version:     1.3
-     * Updated:     Mon Sep 27 11:27:56 CEST 2010
+     * Version:     1.4
+     * Updated:     Wed Feb  8 11:59:56 CET 2012
      *
      * For the System API documentation see:
-     *                       http://www.bitsontherun.com/documentation/system-api/
+     *              http://developer.longtailvideo.com/botr/system-api/
      *-----------------------------------------------------------------------------
      */
 
     class BotrAPI {
-        private $_version = '1.3';
+        private $_version = '1.4';
         private $_url = 'http://api.bitsontherun.com/v1';
         private $_library;
 
@@ -46,8 +46,7 @@
             if (is_array($input)) {
                 return array_map(array('_urlencode'), $input);
             } else if (is_scalar($input)) {
-                return str_replace('+', ' ', str_replace('%7E', '~', rawurlencode($input))
-                );
+                return str_replace('+', ' ', str_replace('%7E', '~', rawurlencode($input)));
             } else {
                 return '';
             }
@@ -62,7 +61,7 @@
                     $sbs .= "&";
                 }
                 // Construct Signature Base String
-                $sbs .= $key . "=" . "$value";
+                $sbs .= $this->_urlencode($key) . "=" . $this->_urlencode($value);
             }
 
             // Add shared secret to the Signature Base String and generate the signature
@@ -86,11 +85,6 @@
 
             // Add API kit version
             $args['api_kit'] = 'php-' . $this->_version;
-
-            // urlencode array values
-            foreach ($args as $key => $value) {
-                $args[$key] = $this->_urlencode($value);
-            }
 
             // Sign the array of arguments
             $args['api_signature'] = $this->_sign($args);
@@ -120,7 +114,9 @@
                     $response = file_get_contents($url);
             }
 
-            return unserialize($response);
+            $unserialized_response = @unserialize($response);
+
+            return $unserialized_response ? $unserialized_response : $response;
         }
 
         // Upload a file
@@ -146,7 +142,7 @@
                     $response = "Error: No cURL library";
             }
 
-            if (err_no == 0) {
+            if ($err_no == 0) {
                 return unserialize($response);
             } else {
                 return "Error #" . $err_no . ": " . $err_msg;
