@@ -2,9 +2,9 @@
 
 require_once 'PEAR/PackageFileManager2.php';
 
-$version = '1.3.0';
+$version = '1.4.0';
 $notes = <<<EOT
-Bits on the Run API version 1.3.
+Bits on the Run API version 1.4.
 EOT;
 
 $description =<<<EOT
@@ -35,7 +35,7 @@ $package->setLicense('LGPL', 'http://www.gnu.org/copyleft/lesser.html');
 
 $package->setReleaseVersion($version);
 $package->setReleaseStability('stable');
-$package->setAPIVersion('1.3.0');
+$package->setAPIVersion('1.4.0');
 $package->setAPIStability('stable');
 $package->setNotes($notes);
 
