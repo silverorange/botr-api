@@ -16,7 +16,7 @@ PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
 $package->setOptions(
 	array(
-		'filelistgenerator' => 'svn',
+		'filelistgenerator' => 'file',
 		'simpleoutput'      => true,
 		'baseinstalldir'    => '/',
 		'packagedirectory'  => './',
