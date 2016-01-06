@@ -1,5 +1,5 @@
 {
-	"name": "silverorange/botr-api",
+	"name": "silverorange/botr_api",
 	"description": "The Bits on the Run API PHP SDK.",
 	"type": "library",
 	"keywords": [ "bitsontherun" ],
