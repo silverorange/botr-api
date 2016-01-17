@@ -13,10 +13,10 @@
   <email>mike@silverorange.com</email>
   <active>yes</active>
  </lead>
- <date>2015-09-04</date>
- <time>12:55:03</time>
+ <date>2016-01-16</date>
+ <time>22:14:30</time>
  <version>
-  <release>1.4.0</release>
+  <release>1.4.1</release>
   <api>1.4.0</api>
  </version>
  <stability>
@@ -30,6 +30,7 @@ Bits on the Run API version 1.4.
  <contents>
   <dir baseinstalldir="/" name="/">
    <file name="BotrAPI.php" role="php" />
+   <file name="composer.json" role="data" />
    <file name="examples.php" role="doc" />
   </dir> <!-- / -->
  </contents>
@@ -52,14 +53,14 @@ Bits on the Run API version 1.4.
  <changelog>
   <release>
    <version>
-    <release>1.4.0</release>
+    <release>1.4.1</release>
     <api>1.4.0</api>
    </version>
    <stability>
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2015-09-04</date>
+   <date>2016-01-16</date>
    <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
    <notes>
 Bits on the Run API version 1.4.
