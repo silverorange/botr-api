@@ -25,5 +25,8 @@
 		"psr-0": {
 			"BotrAPI" : ""
 		}
-	}
+	},
+	"include-path": [
+		"./"
+	]
 }
