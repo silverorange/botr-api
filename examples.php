@@ -45,8 +45,6 @@
 
 header('Content-type: text/plain; charset=utf-8');
 
-require_once 'botr/api.php';
-
 // Please update xxxx with your key and yyyy with your secret
 $botr_api = new BotrAPI('xxxxxxxx', 'yyyyyyyyyyyyyyyyyyyyyyyy');
 
