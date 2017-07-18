@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="Bits on the Run API Client">
+  <arg name="colors" />
+  <arg name="tab-width" value="4" />
+  <arg name="extensions" value="php" />
+  <arg name="encoding" value="utf-8" />
+  <arg name="warning-severity" value="0" />
+  <arg value="p" /><!-- show progress -->
+
+  <file>BotrAPI.php</file>
+
+  <exclude-pattern>*/layout/xhtml/*</exclude-pattern>
+
+  <rule ref="PEAR" />
+</ruleset>
