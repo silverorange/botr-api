@@ -9,7 +9,5 @@
 
   <file>BotrAPI.php</file>
 
-  <exclude-pattern>*/layout/xhtml/*</exclude-pattern>
-
   <rule ref="PEAR" />
 </ruleset>
