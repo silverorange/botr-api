@@ -7,7 +7,7 @@
   <arg name="warning-severity" value="0" />
   <arg value="p" /><!-- show progress -->
 
-  <file>BotrAPI.php</file>
+  <file>./BotrAPI.php</file>
 
   <rule ref="PEAR" />
 </ruleset>
