@@ -75,6 +75,13 @@ class BotrAPI
      */
     private $_url = 'http://api.bitsontherun.com/v1';
 
+    /**
+     * HTTP library to use
+     *
+     * Either 'fopen' or 'curl'.
+     *
+     * @var string
+     */
     private $_library;
 
     /**
@@ -124,7 +131,7 @@ class BotrAPI
     /**
      * Encodes data using a RFC 3986 complient rawurlencode()
      *
-     * This isonly required for phpversion() <= 5.2.7RC1
+     * This is only required for phpversion() <= 5.2.7RC1
      * See http://www.php.net/manual/en/function.rawurlencode.php#86506
      *
      * @param array|string $input the input data
